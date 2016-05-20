@@ -1,16 +1,14 @@
 var params = getHashParams(),
-    mode = typeof(params.mode)=='undefined'?'webrtc':params.mode,
+    mode = 'webrtc',
     username,
     password,
-    application_name = typeof(params.appname)=='undefined'?'videochat':params.appname,
+    application_name = 'videochat',
     account_name = 'speedpitch',
     dialog,
     showLog = true,
     currentCall = null,
     outboundCall = null;
 
-//     account_name = params.accname,	
-	
 function getHashParams() {
   var hashParams = {};
   var e,
@@ -44,7 +42,7 @@ voxAPI.addEventListener(VoxImplant.Events.SourcesInfoUpdated, onSourcesInfoUpdat
 // initialize SDK
 try {
   voxAPI.init({ 
-    useFlashOnly: mode=='flash'?true:false, // force Flash mode
+    useFlashOnly: true, // force Flash mode
     micRequired: true, // force microphone/camera access request
     videoSupport: true, // enable video support 
     progressTone: true, // play progress tone
@@ -94,7 +92,7 @@ function onConnectionEstablished() {
               $('#authForm form').submit();
             }
         }],
-      closable: false,
+      closable: true,
       onshown: function(dialog) {            
         $('#inputUsername').focus();
         $('#authForm form').on('submit', function(e) {
@@ -118,13 +116,13 @@ function login() {
 // Connection with VoxImplant failed
 function onConnectionFailed() {
   log("Connection failed");
-  setTimeout(function() {voxAPI.connect();}, 1000);
+  setTimeout(function() {voxAPI.connect();}, 5000);
 }
 
 // Connection with VoxImplant closed
 function onConnectionClosed() {
   log("Connection closed");
-  setTimeout(function() {voxAPI.connect();}, 1000);
+  setTimeout(function() {voxAPI.connect();}, 5000);
 }
 
 // Handle authorization result
@@ -280,7 +278,7 @@ function connect() {
     dialog = new BootstrapDialog({
       title: 'Camera/Microphone access',
       message: 'Please click Allow to allow access to your camera and microphone',
-      closable: false      
+      closable: true      
     });
     dialog.open();  
   }
