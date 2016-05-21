@@ -155,6 +155,7 @@
 			log("CallConnected: "+e.call.id());
 			outboundCall = e.call;	
 			outboundCall.showRemoteVideo(true);
+			log("ATATA-1:Waiting for other participants");
 			$('div.tip').html('Waiting for other participants');
 			$('div.spinner').remove();			
 			connected = true;			
@@ -319,6 +320,7 @@
 			} else if (result.type == "CALL_PARTICIPANT_DISCONNECTED" || result.type == "CALL_PARTICIPANT_FAILED") {
 				removePeerCall(result.number, true);
 				container_resize();	
+				log("ATATA-2:Waiting for other participants");
 				if (peerCalls.length == 0) {
 					$('#container').css({'display': 'flex'});
 					$('div.tip').html('Waiting for other participants').show();
@@ -387,6 +389,8 @@
 		function outboundP2Pcall_disconnected(e) {			
 			removePeerCall(e.call);
 			container_resize();	
+			
+			log("ATATA-3:Waiting for other participants");
 			if (peerCalls.length == 0) {
 				$('#container').css({'display': 'flex'});
 				$('div.tip').html('Waiting for other participants').show();
