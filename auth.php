@@ -8,7 +8,7 @@ define("ACCOUNT_NAME", "speedpitch");
 /**
 * Some default user password
 */
-define("PWD", "testpass");
+define("PWD", "123456");
 /**
 * VoxImplant Application name
 */
@@ -85,7 +85,6 @@ function initUser($displayName) {
 			echo json_encode(array("result" => "SUCCESS", "username" => $bind_result["username"]));
 			exit;
 		} else {
-			echo "АТАТА-1";
 			echo json_encode(array("result" => "ERROR"));
 			exit;
 		}
