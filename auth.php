@@ -85,11 +85,13 @@ function initUser($displayName) {
 			echo json_encode(array("result" => "SUCCESS", "username" => $bind_result["username"]));
 			exit;
 		} else {
+			echo "АТАТА-1";
 			echo json_encode(array("result" => "ERROR"));
 			exit;
 		}
 
 	} else {
+		echo "АТАТА-2";
 		echo json_encode(array("result" => "ERROR"));
 		exit;
 	}	

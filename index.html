@@ -98,6 +98,8 @@
 				if (displayName != null && displayName != "") display_name = "&displayName=" + displayName;
 			}
 			$.get('auth.php?action=JOIN_CONFERENCE'+display_name, function(data) {
+				log('АТАТА');
+				log(data);
 				try {
 					var result = JSON.parse(data);
 					if (typeof result.username != "undefined") {						
