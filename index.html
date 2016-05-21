@@ -154,7 +154,7 @@
 		function onCallConnected(e) {
 			log("CallConnected: "+e.call.id());
 			outboundCall = e.call;	
-			outboundCall.showRemoteVideo(false);
+			outboundCall.showRemoteVideo(true);
 			$('div.tip').html('Waiting for other participants');
 			$('div.spinner').remove();			
 			connected = true;			
