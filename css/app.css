@@ -31,7 +31,7 @@ div.container {
   margin-bottom: 5px;
 }
 
-#controls button {
+#controls #btn-default {
   float: none;
   width: 160px;
 }
