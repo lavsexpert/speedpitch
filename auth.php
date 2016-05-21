@@ -8,7 +8,7 @@ define("ACCOUNT_NAME", "speedpitch");
 /**
 * Some default user password
 */
-define("PWD", "123456");
+define("PWD", "testpass");
 /**
 * VoxImplant Application name
 */
