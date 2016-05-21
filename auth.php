@@ -50,7 +50,7 @@ function createUser($displayName = "Participant") {
 	$url = API_URL . "AddUser/?" . 
 			"account_name=" . ACCOUNT_NAME .
 			"&api_key=" . API_KEY . 
-			"&user_name=lavsexpert" .
+			"&user_name=" . $username .
 			"&user_display_name=" . $displayName .  
 			"&user_password=" . PWD;
 
