@@ -56,6 +56,7 @@ function createUser($displayName = "Participant") {
 
 	echo $url;
 	$result = httpRequest($url);
+	echo '<br>'.$result.'<br>';
 	return array('api_result' => json_decode($result, true), 'username' => $username);
 }
 
@@ -91,7 +92,6 @@ function initUser($displayName) {
 		}
 
 	} else {
-		echo "ATATA-2";
 		echo json_encode(array("result" => "ERROR"));
 		exit;
 	}	
