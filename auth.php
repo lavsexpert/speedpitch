@@ -32,7 +32,8 @@ function generateUsername($random_string_length) {
 */
 function httpRequest($url,$params = array()) {
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $url);	
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 	
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	if (isset($params["post"])) curl_setopt($ch, CURLOPT_POST, 1);
 	if (isset($params["post_data"])) curl_setopt($ch, CURLOPT_POSTFIELDS, $params["post_data"]);
