@@ -54,6 +54,7 @@ function createUser($displayName = "Participant") {
 			"&user_display_name=" . $displayName .  
 			"&user_password=" . PWD;
 
+	echo $url;
 	$result = httpRequest($url);
 	return array('api_result' => json_decode($result, true), 'username' => $username);
 }
@@ -90,7 +91,7 @@ function initUser($displayName) {
 		}
 
 	} else {
-		echo "АТАТА-2";
+		echo "ATATA-2";
 		echo json_encode(array("result" => "ERROR"));
 		exit;
 	}	
