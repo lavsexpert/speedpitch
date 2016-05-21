@@ -55,9 +55,7 @@ function createUser($displayName = "Participant") {
 			"&user_display_name=" . $displayName .  
 			"&user_password=" . PWD;
 
-	echo $url;
 	$result = httpRequest($url);
-	echo '<br>'.$result.'<br>';
 	return array('api_result' => json_decode($result, true), 'username' => $username);
 }
 
