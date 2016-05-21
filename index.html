@@ -98,7 +98,7 @@
 				if (displayName != null && displayName != "") display_name = "&displayName=" + displayName;
 			}
 			$.get('auth.php?action=JOIN_CONFERENCE'+display_name, function(data) {
-				log('АТАТА');
+				log('ATATA-1');
 				log(data);
 				try {
 					var result = JSON.parse(data);
@@ -137,7 +137,6 @@
 				* Checking the error code
 				* 302 - calculating login hash on server-side using received key
 				*/
-				log("ATATA:"+username+"@"+appname+"."+accname+".voximplant.com");	
 				if (e.code == 302) { 
 
 					var uid = username+"@"+appname+"."+accname+".voximplant.com";
