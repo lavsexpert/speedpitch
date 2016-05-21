@@ -38,7 +38,7 @@ div.container {
 
 #btn-big {
   float: none;
-  width: 320px;
+  width: 320px !important;
 }
 
 #voximplantlocalvideo {
